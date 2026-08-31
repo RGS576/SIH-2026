@@ -1,0 +1,785 @@
+/* =========================================
+OPEN SOLVE — PROBLEM PAGE
+Warm beige / terracotta theme
+
+Cream      #F6EBDD
+Beige      #E8D2B8
+Terracotta #C96A45
+Deep Red   #9E3F32
+Mustard    #D99A32
+Dark Brown #30251F
+========================================= */
+
+/* =========================================
+RESET
+========================================= */
+
+body {
+margin: 0;
+padding: 0;
+
+
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+background-color: #F6EBDD;
+
+color: #30251F;
+
+box-sizing: border-box;
+
+
+}
+
+*, *::before, *::after {
+box-sizing: inherit;
+}
+
+/* =========================================
+FIXED BACK BUTTON
+========================================= */
+
+.back-button {
+position: fixed;
+
+
+top: 22px;
+left: 22px;
+
+z-index: 1000;
+
+display: flex;
+align-items: center;
+gap: 8px;
+
+padding: 10px 17px;
+
+background-color: #FFFDF8;
+
+color: #9E3F32;
+
+border: 1px solid #D5BFA5;
+
+border-radius: 8px;
+
+font-size: 14px;
+font-weight: 600;
+
+text-decoration: none;
+
+box-shadow: 0 4px 15px rgba(72, 45, 32, 0.08);
+
+
+}
+
+.back-button i {
+font-size: 14px;
+}
+
+/* =========================================
+MAIN SCREEN
+========================================= */
+
+.main-container {
+max-width: 1920px;
+
+margin: 0 auto;
+
+padding: 40px;
+
+display: flex;
+
+flex-direction: column;
+
+
+}
+
+/* =========================================
+HEADER
+========================================= */
+
+.app-header {
+background-color: #FFFDF8;
+
+
+padding: 18px 40px;
+
+display: flex;
+
+align-items: center;
+
+justify-content: space-between;
+
+border-bottom: 2px solid #E8D2B8;
+
+margin-bottom: 30px;
+
+border-radius: 12px;
+
+box-shadow: 0 5px 20px rgba(72, 45, 32, 0.05);
+
+
+}
+
+/* LOGO */
+
+.app-logo {
+display: flex;
+
+
+align-items: center;
+
+gap: 10px;
+
+font-size: 22px;
+
+font-weight: bold;
+
+color: #9E3F32;
+
+
+}
+
+/* NAVIGATION */
+
+.app-nav {
+display: flex;
+
+
+gap: 25px;
+
+align-items: center;
+
+
+}
+
+.nav-item {
+color: #6D5145;
+
+
+cursor: pointer;
+
+font-weight: 500;
+
+font-size: 14px;
+
+
+}
+
+.nav-item.active {
+color: #9E3F32;
+}
+
+/* =========================================
+HEADER SEARCH
+========================================= */
+
+.app-search {
+position: relative;
+}
+
+.app-search input {
+padding: 11px 15px 11px 40px;
+
+
+border: 1px solid #D5BFA5;
+
+border-radius: 20px;
+
+width: 250px;
+
+background-color: #F6EBDD;
+
+color: #30251F;
+
+outline: none;
+
+
+}
+
+.app-search input::placeholder {
+color: #927A6D;
+}
+
+.app-search .fa-search {
+position: absolute;
+
+
+left: 15px;
+
+top: 50%;
+
+transform: translateY(-50%);
+
+color: #9E3F32;
+
+
+}
+
+/* =========================================
+PAGE CONTENT
+========================================= */
+
+.page-content {
+display: flex;
+
+
+flex-direction: column;
+
+gap: 25px;
+
+
+}
+
+/* =========================================
+TITLE AREA
+========================================= */
+
+.title-area {
+position: relative;
+
+
+background-color: #E8D2B8;
+
+color: #30251F;
+
+padding: 28px 40px;
+
+border-radius: 12px;
+
+border: 1px solid #D5BFA5;
+
+overflow: hidden;
+
+box-shadow: 0 6px 20px rgba(72, 45, 32, 0.05);
+
+
+}
+
+/* Decorative side line */
+
+.title-area::before {
+content: "";
+
+
+position: absolute;
+
+left: 0;
+top: 0;
+
+width: 6px;
+height: 100%;
+
+background-color: #9E3F32;
+
+
+}
+
+.title-area h1 {
+margin: 0 0 7px 0;
+
+
+font-size: 32px;
+
+color: #30251F;
+
+
+}
+
+.title-area p {
+margin: 0;
+
+
+font-size: 14px;
+
+color: #6D5145;
+
+
+}
+
+/* =========================================
+DESCRIPTION AREA
+========================================= */
+
+.description-area {
+background-color: #FFFDF8;
+
+
+color: #30251F;
+
+padding: 30px 40px;
+
+border-radius: 12px;
+
+border: 1px solid #E8D2B8;
+
+box-shadow: 0 6px 20px rgba(72, 45, 32, 0.045);
+
+
+}
+
+.description-area h2 {
+margin: 0 0 15px 0;
+
+font-size: 24px;
+
+color: #9E3F32;
+
+
+}
+
+.description-area p {
+margin: 0;
+
+
+line-height: 1.7;
+
+color: #6D5145;
+
+font-size: 15px;
+
+}
+
+/* =========================================
+CONTENT GRID
+========================================= */
+
+.content-grid {
+display: grid;
+
+
+grid-template-columns: 2fr 1fr;
+
+gap: 25px;
+
+
+}
+
+/* =========================================
+ACTIONS
+========================================= */
+
+.actions-group {
+display: flex;
+
+
+flex-direction: column;
+
+gap: 20px;
+
+}
+
+/* =========================================
+ADD MORE INFO
+========================================= */
+
+.add-info-box {
+display: flex;
+
+
+flex-direction: column;
+
+align-items: center;
+
+justify-content: center;
+
+gap: 10px;
+
+background-color: #F6EBDD;
+
+border: 2px dashed #C96A45;
+
+color: #30251F;
+
+padding: 40px;
+
+border-radius: 12px;
+
+cursor: pointer;
+
+text-decoration: none;
+
+min-height: 180px;
+
+}
+
+.add-info-box i {
+font-size: 36px;
+
+
+color: #C96A45;
+
+
+}
+
+.add-info-box span {
+font-weight: bold;
+
+
+font-size: 18px;
+
+color: #9E3F32;
+
+
+}
+
+/* =========================================
+CONTRIBUTE BUTTON
+========================================= */
+
+.contribute-btn {
+background-color: #9E3F32;
+
+
+color: white;
+
+border: none;
+
+padding: 20px;
+
+border-radius: 10px;
+
+font-weight: bold;
+height: 200;
+
+font-size: 25px;
+
+cursor: pointer;
+
+width: 100%;
+
+}
+
+/* =========================================
+PHOTO AREA
+========================================= */
+
+.photo-area {
+background-color: #FFFDF8;
+
+
+color: #30251F;
+
+display: flex;
+
+flex-direction: column;
+
+align-items: center;
+
+justify-content: center;
+
+gap: 15px;
+
+padding: 30px;
+
+min-height: 300px;
+
+border-radius: 12px;
+
+border: 1px solid #E8D2B8;
+
+text-align: center;
+
+box-shadow: 0 6px 20px rgba(72, 45, 32, 0.045);
+
+
+}
+
+.photo-area i {
+font-size: 48px;
+
+
+color: #D99A32;
+
+
+}
+
+.photo-area span {
+font-size: 16px;
+
+
+color: #765F53;
+
+font-weight: 500;
+
+
+}
+
+/* =========================================
+OPTIONAL PROBLEM META
+========================================= */
+
+.problem-meta {
+display: flex;
+
+
+gap: 10px;
+
+flex-wrap: wrap;
+
+margin-top: 18px;
+
+
+}
+
+.problem-meta span {
+padding: 6px 12px;
+
+
+border-radius: 5px;
+
+background-color: #F4DED2;
+
+border: 1px solid #E5B9A7;
+
+color: #7A352A;
+
+font-size: 12px;
+
+font-weight: 600;
+
+
+}
+
+/* =========================================
+CONTACT SECTION
+========================================= */
+
+.contact-section {
+position: relative;
+
+
+overflow: hidden;
+
+margin-top: 70px;
+
+padding: 65px 40px;
+
+color: #FFFDF8;
+
+background-color: #9E3F32;
+
+border-top: 6px solid #D99A2A;
+
+
+}
+
+/* Abstract circle */
+
+.contact-section::before {
+content: "";
+
+
+position: absolute;
+
+width: 300px;
+height: 300px;
+
+border: 2px solid rgba(255, 255, 255, 0.10);
+
+border-radius: 50%;
+
+right: -120px;
+top: -170px;
+
+}
+
+/* Abstract square */
+
+.contact-section::after {
+content: "";
+
+
+position: absolute;
+
+width: 180px;
+height: 180px;
+
+border: 2px solid rgba(255, 255, 255, 0.08);
+
+border-radius: 30px;
+
+left: -80px;
+bottom: -100px;
+
+transform: rotate(25deg);
+
+
+}
+
+.contact-container {
+position: relative;
+
+
+z-index: 2;
+
+max-width: 1150px;
+
+margin: auto;
+
+display: grid;
+
+grid-template-columns: 2fr 1fr 1fr;
+
+gap: 60px;
+
+}
+
+.contact-section h2 {
+font-size: 25px;
+
+
+color: #FFFDF8;
+
+margin-bottom: 16px;
+
+
+}
+
+.contact-section h3 {
+font-size: 14px;
+
+
+color: #F6EBDD;
+
+margin-bottom: 18px;
+
+
+}
+
+.contact-section p {
+color: #F1D9CC;
+
+
+line-height: 1.7;
+
+font-size: 13px;
+
+max-width: 450px;
+
+
+}
+
+/* CONTACT LINKS */
+
+.contact-links {
+list-style: none;
+padding: 0;
+
+margin: 0;
+
+
+}
+
+.contact-links li {
+margin-bottom: 12px;
+
+
+color: #F1D9CC;
+
+font-size: 13px;
+
+
+}
+
+/* =========================================
+FOOTER
+========================================= */
+
+footer {
+background-color: #30251F;
+
+
+color: #CDB8AA;
+
+text-align: center;
+
+padding: 20px;
+
+font-size: 11px;
+
+
+}
+
+/* =========================================
+RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 1000px) {
+
+
+.content-grid {
+    grid-template-columns: 1fr;
+}
+
+.photo-area {
+    min-height: 220px;
+}
+
+.contact-container {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 35px;
+}
+
+
+}
+
+@media (max-width: 700px) {
+
+
+.main-container {
+    padding: 20px;
+}
+
+.app-header {
+    padding: 18px 20px;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+}
+
+.app-nav {
+    order: 3;
+
+    width: 100%;
+
+    justify-content: center;
+}
+
+.app-search {
+    display: none;
+}
+
+.title-area {
+    padding: 25px;
+}
+
+.title-area h1 {
+    font-size: 26px;
+}
+
+.description-area {
+    padding: 25px;
+}
+
+.content-grid {
+    gap: 20px;
+}
+
+.contact-section {
+    padding: 50px 25px;
+}
+
+.contact-container {
+    grid-template-columns: 1fr;
+}
+
+.back-button {
+    top: 12px;
+    left: 12px;
+
+    padding: 9px 13px;
+}
+
+}
