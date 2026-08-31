@@ -1,4 +1,4 @@
-/* ========================= GENERAL ========================== */
+        /* ========================= GENERAL ========================== */
 * {
   margin: 0;
   padding: 0;
@@ -116,7 +116,7 @@ a {
 /* ========================= PROFILE SIDEBAR ========================== */
 .profile-card {
   background-color: white;
-  border: 1px solid #ddd;
+  border: 1px solid #ffe8c7;
   border-radius: 10px;
   padding: 25px;
   height: fit-content;
@@ -126,7 +126,7 @@ a {
   width: 90px;
   height: 90px;
   border-radius: 50%;
-  background-color: #ddd;
+  background-color: #f3e3c2;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -177,13 +177,13 @@ a {
 }
 
 .section-description {
-  color: #777;
+  color: #979797;
   margin-bottom: 25px;
 }
 
 .problem-card {
   background-color: white;
-  border: 1px solid #ddd;
+  border: 1px solid #eaec82;
   border-radius: 10px;
   padding: 22px;
   margin-bottom: 18px;
@@ -348,9 +348,9 @@ footer {
     body {
         font-family: 'Inter', Arial, sans-serif;
         background:
-            radial-gradient(circle at 10% 10%, rgba(99, 102, 241, 0.12), transparent 30%),
-            radial-gradient(circle at 90% 20%, rgba(236, 72, 153, 0.10), transparent 28%),
-            radial-gradient(circle at 50% 80%, rgba(20, 184, 166, 0.08), transparent 30%),
+            radial-gradient(circle at 10% 10%, rgba(80, 56, 7, 0), transparent 30%),
+            radial-gradient(circle at 90% 20%, rgba(105, 93, 23, 0.1), transparent 28%),
+            radial-gradient(circle at 50% 80%, rgba(94, 24, 10, 0), transparent 30%),
             #f7f8fc;
 
         color: #17172b;
@@ -381,16 +381,16 @@ footer {
 
         padding: 0 6%;
 
-        background: rgba(255, 255, 255, 0.78);
+        background: rgba(255, 207, 131, 0.868);
         backdrop-filter: blur(18px);
 
-        border-bottom: 1px solid rgba(100, 100, 150, 0.12);
+        border-bottom: 1px solid rgba(75, 3, 3, 0.54);
 
         position: sticky;
         top: 0;
         z-index: 100;
 
-        box-shadow: 0 5px 30px rgba(40, 40, 80, 0.05);
+        box-shadow: 0 5px 30px rgba(146, 131, 2, 0.899);
     }
 
 
@@ -402,9 +402,8 @@ footer {
 
         background: linear-gradient(
             90deg,
-            #6366f1,
-            #8b5cf6,
-            #ec4899
+            #f9af60,
+            #efd878,
         );
 
         -webkit-background-clip: text;
@@ -423,7 +422,7 @@ footer {
     }
 
     .nav-links a {
-        color: #55566f;
+        color: #953732;
         font-size: 14px;
         font-weight: 500;
 
@@ -431,7 +430,7 @@ footer {
     }
 
     .nav-links a:hover {
-        color: #6366f1;
+        color:#e4f0bf;
     }
 
 
@@ -445,7 +444,7 @@ footer {
 
         background: white;
 
-        color: #29294a;
+        color: #662e2e;
 
         font-weight: 600;
 
@@ -455,13 +454,13 @@ footer {
     }
 
     .login-button:hover {
-        background: #6366f1;
+        background: #efd878;
         color: white;
-        border-color: #6366f1;
+        border-color: #f2a0a0;
 
         transform: translateY(-2px);
 
-        box-shadow: 0 8px 20px rgba(99, 102, 241, 0.25);
+        box-shadow: 0 8px 20px rgba(255, 255, 255, 0.25);
     }
 
 
@@ -481,12 +480,12 @@ footer {
         background:
             linear-gradient(
                 135deg,
-                #ffffff 0%,
+                #ffd68f 0%,
                 #f5f3ff 45%,
-                #fff1f8 100%
+                #ffffff 100%
             );
 
-        border-bottom: 1px solid rgba(100, 100, 150, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
 
@@ -502,8 +501,8 @@ footer {
 
         background: linear-gradient(
             135deg,
-            rgba(99, 102, 241, 0.16),
-            rgba(139, 92, 246, 0.05)
+            rgba(255, 203, 59, 0.525),
+            rgba(255, 240, 154, 0.05)
         );
 
         border-radius: 42% 58% 65% 35% / 45% 40% 60% 55%;
@@ -524,8 +523,8 @@ footer {
 
         background: linear-gradient(
             135deg,
-            rgba(236, 72, 153, 0.13),
-            rgba(245, 158, 11, 0.05)
+            rgba(251, 182, 80, 0.13),
+            rgba(255, 205, 119, 0.05)
         );
 
         border-radius: 65% 35% 40% 60% / 50% 60% 40% 50%;
@@ -551,9 +550,8 @@ footer {
 
         background: linear-gradient(
             90deg,
-            #18182c,
-            #6366f1,
-            #a855f7
+            #e4f0bf,
+            #efd878,
         );
 
         -webkit-background-clip: text;
@@ -564,7 +562,7 @@ footer {
         position: relative;
         z-index: 2;
 
-        color: #66677e;
+        color: #fed671;
 
         font-size: 16px;
 
@@ -586,25 +584,25 @@ footer {
 
         background: rgba(255, 255, 255, 0.9);
 
-        border: 1px solid rgba(99, 102, 241, 0.2);
+        border: 1px solid rgba(255, 229, 33, 0.2);
 
         border-radius: 16px;
 
         padding: 6px;
 
         box-shadow:
-            0 20px 50px rgba(65, 60, 120, 0.12),
-            0 0 0 5px rgba(99, 102, 241, 0.03);
+            0 20px 50px rgba(251, 201, 125, 0.12),
+            0 0 0 5px rgba(205, 198, 148, 0.03);
 
         transition: 0.3s ease;
     }
 
     .search-container:focus-within {
-        border-color: rgba(99, 102, 241, 0.5);
+        border-color: rgba(130, 96, 19, 0.549);
 
         box-shadow:
-            0 20px 50px rgba(65, 60, 120, 0.16),
-            0 0 0 6px rgba(99, 102, 241, 0.08);
+            0 20px 50px rgba(253, 170, 94, 0.16),
+            0 0 0 6px rgba(206, 196, 151, 0.08);
     }
 
     .search-container input {
@@ -620,11 +618,11 @@ footer {
 
         font-size: 15px;
 
-        color: #22223a;
+        color: #b34506;
     }
 
     .search-container input::placeholder {
-        color: #9b9bb0;
+        color: #663211;
     }
 
 
@@ -639,8 +637,8 @@ footer {
 
         background: linear-gradient(
             135deg,
-            #6366f1,
-            #8b5cf6
+            #e4f0bf,
+            #dbb006,
         );
 
         color: white;
@@ -654,14 +652,14 @@ footer {
         transition: 0.25s ease;
 
         box-shadow:
-            0 7px 20px rgba(99, 102, 241, 0.25);
+            0 7px 20px rgba(204, 245, 23, 0.25);
     }
 
     .search-button:hover {
         transform: translateY(-2px);
 
         box-shadow:
-            0 10px 25px rgba(99, 102, 241, 0.35);
+            0 10px 25px rgba(61, 48, 3, 0.35);
     }
 
 
@@ -697,11 +695,11 @@ footer {
         background:
             linear-gradient(
                 145deg,
-                rgba(255, 255, 255, 0.96),
-                rgba(248, 247, 255, 0.9)
+                rgba(239, 191, 140, 0.96),
+                rgba(255, 255, 255, 0.9)
             );
 
-        border: 1px solid rgba(99, 102, 241, 0.14);
+        border: 1px solid rgba(13, 13, 33, 0.14);
 
         border-radius: 20px;
 
@@ -710,7 +708,7 @@ footer {
         height: fit-content;
 
         box-shadow:
-            0 15px 40px rgba(40, 40, 90, 0.07);
+            0 15px 40px rgba(121, 57, 34, 0.489);
 
         overflow: hidden;
 
@@ -730,7 +728,7 @@ footer {
 
         background: linear-gradient(
             135deg,
-            rgba(99, 102, 241, 0.13),
+            rgba(255, 188, 94, 0.13),
             transparent
         );
 
@@ -769,7 +767,7 @@ footer {
         background:
             linear-gradient(
                 135deg,
-                #e0e7ff,
+                #ffd66f,
                 #fce7f3
             );
 
@@ -1340,5 +1338,6 @@ footer {
         }
 
     }
+
 
 

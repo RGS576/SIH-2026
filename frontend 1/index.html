@@ -5,348 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OpenSolve</title>
     <!-- Link to external stylesheet -->
+    
     <style>
-        /* ========================= GENERAL ========================== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-body {
-  background-color: #f5f7fa;
-  color: #222;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* ========================= NAVBAR ========================== */
-.navbar {
-  height: 70px;
-  background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 50px;
-  border-bottom: 1px solid #ddd;
-}
-
-.logo {
-  font-size: 25px;
-  font-weight: bold;
-}
-
-.nav-links {
-  display: flex;
-  gap: 30px;
-  align-items: center;
-}
-
-.nav-links a {
-  color: #444;
-  font-size: 15px;
-}
-
-.nav-links a:hover {
-  color: #000;
-}
-
-.login-button {
-  padding: 10px 20px;
-  border: 1px solid #222;
-  border-radius: 6px;
-  background: white;
-  cursor: pointer;
-}
-
-/* ========================= SEARCH SECTION ========================== */
-.search-section {
-  text-align: center;
-  padding: 45px 20px 35px;
-  background-color: white;
-}
-
-.search-section h1 {
-  font-size: 32px;
-  margin-bottom: 10px;
-}
-
-.search-section p {
-  color: #666;
-  margin-bottom: 25px;
-}
-
-.search-container {
-  max-width: 700px;
-  margin: auto;
-  display: flex;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  overflow: hidden;
-  background: white;
-}
-
-.search-container input {
-  flex: 1;
-  padding: 15px;
-  border: none;
-  outline: none;
-  font-size: 16px;
-}
-
-.search-button {
-  padding: 0 25px;
-  border: none;
-  background-color: #222;
-  color: white;
-  cursor: pointer;
-  font-size: 15px;
-}
-
-.search-button:hover {
-  background-color: #444;
-}
-
-/* ========================= MAIN CONTENT ========================== */
-.main-container {
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 0 20px;
-  display: grid;
-  grid-template-columns: 270px 1fr;
-  gap: 35px;
-}
-
-/* ========================= PROFILE SIDEBAR ========================== */
-.profile-card {
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 25px;
-  height: fit-content;
-}
-
-.profile-picture {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  background-color: #ddd;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 15px;
-  font-size: 35px;
-  color: #777;
-}
-
-.profile-card h2 {
-  text-align: center;
-  font-size: 20px;
-  margin-bottom: 5px;
-}
-
-.profile-card .username {
-  text-align: center;
-  color: #777;
-  font-size: 14px;
-  margin-bottom: 20px;
-}
-
-.profile-info {
-  border-top: 1px solid #eee;
-  padding-top: 15px;
-}
-
-.profile-info p {
-  margin-bottom: 12px;
-  font-size: 14px;
-  color: #555;
-}
-
-.profile-button {
-  width: 100%;
-  padding: 10px;
-  margin-top: 10px;
-  background-color: #222;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-/* ========================= TOP PROBLEMS ========================== */
-.problems-section h2 {
-  font-size: 25px;
-  margin-bottom: 8px;
-}
-
-.section-description {
-  color: #777;
-  margin-bottom: 25px;
-}
-
-.problem-card {
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 22px;
-  margin-bottom: 18px;
-  transition: 0.2s;
-}
-
-.problem-card:hover {
-  border-color: #999;
-  transform: translateY(-2px);
-}
-
-.problem-card h3 {
-  font-size: 19px;
-  margin-bottom: 8px;
-}
-
-.problem-card p {
-  color: #666;
-  line-height: 1.5;
-  font-size: 14px;
-  margin-bottom: 15px;
-}
-
-.problem-tags {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-bottom: 15px;
-}
-
-.tag {
-  background-color: #f0f0f0;
-  padding: 5px 10px;
-  border-radius: 15px;
-  font-size: 12px;
-  color: #555;
-}
-
-.problem-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-top: 1px solid #eee;
-  padding-top: 12px;
-}
-
-.contributions {
-  color: #777;
-  font-size: 13px;
-}
-
-.view-button {
-  padding: 8px 15px;
-  border: 1px solid #222;
-  border-radius: 5px;
-  background-color: white;
-  cursor: pointer;
-}
-
-.view-button:hover {
-  background-color: #222;
-  color: white;
-}
-
-/* ========================= CONTACT SECTION ========================== */
-.contact-section {
-  background-color: #222;
-  color: white;
-  padding: 50px 20px;
-  margin-top: 60px;
-}
-
-.contact-container {
-  max-width: 1100px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 50px;
-}
-
-.contact-section h2 {
-  margin-bottom: 15px;
-}
-
-.contact-section h3 {
-  margin-bottom: 15px;
-  font-size: 16px;
-}
-
-.contact-section p {
-  color: #bbb;
-  line-height: 1.6;
-  font-size: 14px;
-}
-
-.contact-links {
-  list-style: none;
-}
-
-.contact-links li {
-  margin-bottom: 10px;
-  color: #bbb;
-  font-size: 14px;
-}
-
-.contact-links li:hover {
-  color: white;
-}
-
-/* ========================= FOOTER ========================== */
-footer {
-  background-color: #181818;
-  color: #888;
-  text-align: center;
-  padding: 18px;
-  font-size: 13px;
-}
-
-/* ========================= RESPONSIVE DESIGN ========================== */
-@media (max-width: 800px) {
-  .navbar {
-    padding: 0 20px;
-  }
-  
-  .nav-links {
-    display: none;
-  }
-  
-  .main-container {
-    grid-template-columns: 1fr;
-  }
-  
-  .profile-card {
-    max-width: 400px;
-    margin: auto;
-    width: 100%;
-  }
-  
-  .contact-container {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-}
 
 
-/* =========================================
-       GLOBAL
-========================================= */
+    /* =========================================
+       OPEN SOLVE — WARM EDITORIAL PALETTE
 
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+       Cream      #F6EBDD
+       Beige      #E8D2B8
+       Terracotta #C96A45
+       Deep Red   #9E3F32
+       Mustard    #D99A32
+       Dark Brown #30251F
+    ========================================= */
+
+
+    /* =========================================
+       GENERAL
+    ========================================= */
 
     * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
     }
 
     html {
@@ -354,14 +37,8 @@ footer {
     }
 
     body {
-        font-family: 'Inter', Arial, sans-serif;
-        background:
-            radial-gradient(circle at 10% 10%, rgba(99, 102, 241, 0.12), transparent 30%),
-            radial-gradient(circle at 90% 20%, rgba(236, 72, 153, 0.10), transparent 28%),
-            radial-gradient(circle at 50% 80%, rgba(20, 184, 166, 0.08), transparent 30%),
-            #f7f8fc;
-
-        color: #17172b;
+        background-color: #F6EBDD;
+        color: #30251F;
         min-height: 100vh;
     }
 
@@ -378,10 +55,12 @@ footer {
 
     /* =========================================
        NAVBAR
-       ========================================= */
+    ========================================= */
 
     .navbar {
-        height: 76px;
+        height: 74px;
+
+        background-color: #F6EBDD;
 
         display: flex;
         align-items: center;
@@ -389,40 +68,19 @@ footer {
 
         padding: 0 6%;
 
-        background: rgba(255, 255, 255, 0.78);
-        backdrop-filter: blur(18px);
-
-        border-bottom: 1px solid rgba(100, 100, 150, 0.12);
+        border-bottom: 2px solid #E8D2B8;
 
         position: sticky;
         top: 0;
         z-index: 100;
-
-        box-shadow: 0 5px 30px rgba(40, 40, 80, 0.05);
     }
-
-
-    /* LOGO */
 
     .logo {
         font-size: 25px;
-        font-weight: 800;
-
-        background: linear-gradient(
-            90deg,
-            #6366f1,
-            #8b5cf6,
-            #ec4899
-        );
-
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-
+        font-weight: bold;
+        color: #9E3F32;
         letter-spacing: -1px;
     }
-
-
-    /* NAV LINKS */
 
     .nav-links {
         display: flex;
@@ -431,95 +89,62 @@ footer {
     }
 
     .nav-links a {
-        color: #55566f;
+        color: #6D5145;
         font-size: 14px;
         font-weight: 500;
-
-        transition: 0.25s ease;
     }
-
-    .nav-links a:hover {
-        color: #6366f1;
-    }
-
-
-    /* LOGIN */
 
     .login-button {
         padding: 10px 21px;
 
-        border: 1px solid #d9d9ee;
-        border-radius: 9px;
+        border: 1px solid #9E3F32;
+        border-radius: 7px;
 
-        background: white;
+        background-color: transparent;
 
-        color: #29294a;
+        color: #9E3F32;
 
         font-weight: 600;
 
         cursor: pointer;
-
-        transition: 0.25s ease;
-    }
-
-    .login-button:hover {
-        background: #6366f1;
-        color: white;
-        border-color: #6366f1;
-
-        transform: translateY(-2px);
-
-        box-shadow: 0 8px 20px rgba(99, 102, 241, 0.25);
     }
 
 
     /* =========================================
-       SEARCH / HERO
-       ========================================= */
+       SEARCH / HERO SECTION
+    ========================================= */
 
     .search-section {
         position: relative;
 
-        overflow: hidden;
-
         text-align: center;
 
-        padding: 90px 20px 80px;
+        padding: 85px 20px 75px;
 
-        background:
-            linear-gradient(
-                135deg,
-                #ffffff 0%,
-                #f5f3ff 45%,
-                #fff1f8 100%
-            );
+        background-color: #E8D2B8;
 
-        border-bottom: 1px solid rgba(100, 100, 150, 0.1);
+        border-bottom: 1px solid #D5BFA5;
+
+        overflow: hidden;
     }
 
 
-    /* ABSTRACT BACKGROUND SHAPES */
+    /* SIMPLE ABSTRACT SHAPES */
 
     .search-section::before {
         content: "";
 
         position: absolute;
 
-        width: 350px;
-        height: 350px;
+        width: 260px;
+        height: 260px;
 
-        background: linear-gradient(
-            135deg,
-            rgba(99, 102, 241, 0.16),
-            rgba(139, 92, 246, 0.05)
-        );
+        border: 2px solid rgba(158, 63, 50, 0.16);
 
-        border-radius: 42% 58% 65% 35% / 45% 40% 60% 55%;
+        border-radius: 50%;
 
-        top: -150px;
-        left: -100px;
-
-        transform: rotate(25deg);
+        top: -145px;
+        left: -80px;
     }
 
     .search-section::after {
@@ -527,60 +152,49 @@ footer {
 
         position: absolute;
 
-        width: 300px;
-        height: 300px;
+        width: 190px;
+        height: 190px;
 
-        background: linear-gradient(
-            135deg,
-            rgba(236, 72, 153, 0.13),
-            rgba(245, 158, 11, 0.05)
-        );
+        border: 2px solid rgba(217, 154, 50, 0.22);
 
-        border-radius: 65% 35% 40% 60% / 50% 60% 40% 50%;
+        border-radius: 35px;
 
-        right: -100px;
-        bottom: -130px;
+        right: -80px;
+        bottom: -100px;
 
-        transform: rotate(-20deg);
+        transform: rotate(25deg);
     }
-
 
     .search-section h1 {
         position: relative;
         z-index: 2;
 
-        font-size: clamp(35px, 5vw, 58px);
+        font-size: clamp(36px, 5vw, 54px);
 
         font-weight: 800;
 
-        letter-spacing: -2.5px;
+        letter-spacing: -2px;
 
-        margin-bottom: 18px;
+        margin-bottom: 15px;
 
-        background: linear-gradient(
-            90deg,
-            #18182c,
-            #6366f1,
-            #a855f7
-        );
-
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        color: #30251F;
     }
 
     .search-section p {
         position: relative;
         z-index: 2;
 
-        color: #66677e;
+        color: #6D5145;
 
         font-size: 16px;
 
-        margin-bottom: 32px;
+        margin-bottom: 30px;
     }
 
 
-    /* SEARCH BOX */
+    /* =========================================
+       SEARCH BAR
+    ========================================= */
 
     .search-container {
         position: relative;
@@ -592,27 +206,13 @@ footer {
 
         display: flex;
 
-        background: rgba(255, 255, 255, 0.9);
+        background-color: #FFFDF8;
 
-        border: 1px solid rgba(99, 102, 241, 0.2);
+        border: 2px solid #C96A45;
 
-        border-radius: 16px;
+        border-radius: 10px;
 
-        padding: 6px;
-
-        box-shadow:
-            0 20px 50px rgba(65, 60, 120, 0.12),
-            0 0 0 5px rgba(99, 102, 241, 0.03);
-
-        transition: 0.3s ease;
-    }
-
-    .search-container:focus-within {
-        border-color: rgba(99, 102, 241, 0.5);
-
-        box-shadow:
-            0 20px 50px rgba(65, 60, 120, 0.16),
-            0 0 0 6px rgba(99, 102, 241, 0.08);
+        overflow: hidden;
     }
 
     .search-container input {
@@ -624,32 +224,23 @@ footer {
 
         outline: none;
 
-        background: transparent;
+        background-color: #FFFDF8;
+
+        color: #30251F;
 
         font-size: 15px;
-
-        color: #22223a;
     }
 
     .search-container input::placeholder {
-        color: #9b9bb0;
+        color: #9A8174;
     }
-
-
-    /* SEARCH BUTTON */
 
     .search-button {
         padding: 0 28px;
 
         border: none;
 
-        border-radius: 11px;
-
-        background: linear-gradient(
-            135deg,
-            #6366f1,
-            #8b5cf6
-        );
+        background-color: #9E3F32;
 
         color: white;
 
@@ -658,24 +249,12 @@ footer {
         font-weight: 600;
 
         cursor: pointer;
-
-        transition: 0.25s ease;
-
-        box-shadow:
-            0 7px 20px rgba(99, 102, 241, 0.25);
-    }
-
-    .search-button:hover {
-        transform: translateY(-2px);
-
-        box-shadow:
-            0 10px 25px rgba(99, 102, 241, 0.35);
     }
 
 
     /* =========================================
        MAIN CONTENT
-       ========================================= */
+    ========================================= */
 
     .main-container {
         max-width: 1250px;
@@ -689,76 +268,42 @@ footer {
         grid-template-columns: 280px 1fr;
 
         gap: 40px;
-
-        position: relative;
     }
 
 
     /* =========================================
        PROFILE CARD
-       ========================================= */
+    ========================================= */
 
     .profile-card {
         position: sticky;
         top: 100px;
 
-        background:
-            linear-gradient(
-                145deg,
-                rgba(255, 255, 255, 0.96),
-                rgba(248, 247, 255, 0.9)
-            );
+        background-color: #FFFDF8;
 
-        border: 1px solid rgba(99, 102, 241, 0.14);
+        border: 2px solid #E8D2B8;
 
-        border-radius: 20px;
+        border-radius: 14px;
 
         padding: 28px;
 
         height: fit-content;
-
-        box-shadow:
-            0 15px 40px rgba(40, 40, 90, 0.07);
-
-        overflow: hidden;
-
-        transition: 0.3s ease;
     }
-
-
-    /* ABSTRACT BORDER */
 
     .profile-card::before {
         content: "";
 
-        position: absolute;
+        display: block;
 
-        width: 150px;
-        height: 150px;
+        width: 45px;
+        height: 5px;
 
-        background: linear-gradient(
-            135deg,
-            rgba(99, 102, 241, 0.13),
-            transparent
-        );
+        background-color: #D99A32;
 
-        border-radius: 50%;
+        margin-bottom: 22px;
 
-        top: -80px;
-        right: -60px;
+        border-radius: 3px;
     }
-
-    .profile-card:hover {
-        transform: translateY(-4px);
-
-        border-color: rgba(99, 102, 241, 0.3);
-
-        box-shadow:
-            0 20px 45px rgba(40, 40, 90, 0.11);
-    }
-
-
-    /* PROFILE IMAGE */
 
     .profile-picture {
         width: 92px;
@@ -766,25 +311,19 @@ footer {
 
         border-radius: 50%;
 
-        margin: 0 auto 18px;
+        background-color: #E8D2B8;
 
         display: flex;
         align-items: center;
         justify-content: center;
 
+        margin: 0 auto 18px;
+
         font-size: 34px;
 
-        background:
-            linear-gradient(
-                135deg,
-                #e0e7ff,
-                #fce7f3
-            );
+        color: #9E3F32;
 
-        border: 5px solid white;
-
-        box-shadow:
-            0 8px 25px rgba(99, 102, 241, 0.15);
+        border: 4px solid #F6EBDD;
     }
 
     .profile-card h2 {
@@ -792,13 +331,15 @@ footer {
 
         font-size: 19px;
 
+        color: #30251F;
+
         margin-bottom: 5px;
     }
 
     .profile-card .username {
         text-align: center;
 
-        color: #8a8aa0;
+        color: #8A7063;
 
         font-size: 13px;
 
@@ -809,24 +350,25 @@ footer {
     /* PROFILE INFORMATION */
 
     .profile-info {
-        border-top: 1px solid #ececf5;
+        border-top: 1px solid #E8D2B8;
 
         padding-top: 18px;
     }
 
     .profile-info p {
         display: flex;
+
         justify-content: space-between;
 
         margin-bottom: 14px;
 
         font-size: 13px;
 
-        color: #69697e;
+        color: #765F53;
     }
 
     .profile-info strong {
-        color: #33334d;
+        color: #30251F;
     }
 
 
@@ -839,37 +381,23 @@ footer {
 
         margin-top: 12px;
 
-        border: none;
-
-        border-radius: 9px;
-
-        background:
-            linear-gradient(
-                135deg,
-                #6366f1,
-                #8b5cf6
-            );
+        background-color: #C96A45;
 
         color: white;
+
+        border: none;
+
+        border-radius: 7px;
 
         font-weight: 600;
 
         cursor: pointer;
-
-        transition: 0.25s ease;
-    }
-
-    .profile-button:hover {
-        transform: translateY(-2px);
-
-        box-shadow:
-            0 8px 20px rgba(99, 102, 241, 0.25);
     }
 
 
     /* =========================================
        PROBLEMS SECTION
-       ========================================= */
+    ========================================= */
 
     .problems-section {
         min-width: 0;
@@ -882,11 +410,13 @@ footer {
 
         letter-spacing: -1px;
 
+        color: #30251F;
+
         margin-bottom: 7px;
     }
 
     .section-description {
-        color: #7b7b91;
+        color: #80695D;
 
         font-size: 14px;
 
@@ -896,31 +426,26 @@ footer {
 
     /* =========================================
        PROBLEM CARDS
-       ========================================= */
+    ========================================= */
 
     .problem-card {
         position: relative;
 
-        background: rgba(255, 255, 255, 0.9);
+        background-color: #FFFDF8;
 
-        border: 1px solid #e4e4ef;
+        border: 2px solid #E8D2B8;
 
-        border-radius: 17px;
+        border-radius: 12px;
 
         padding: 25px;
 
         margin-bottom: 18px;
 
         overflow: hidden;
-
-        transition:
-            transform 0.3s ease,
-            box-shadow 0.3s ease,
-            border-color 0.3s ease;
     }
 
 
-    /* COLORFUL ABSTRACT EDGE */
+    /* COLOURED SIDE LINE */
 
     .problem-card::before {
         content: "";
@@ -930,46 +455,34 @@ footer {
         left: 0;
         top: 0;
 
-        width: 4px;
+        width: 5px;
         height: 100%;
 
-        background:
-            linear-gradient(
-                180deg,
-                #6366f1,
-                #a855f7,
-                #ec4899
-            );
-
-        opacity: 0;
-
-        transition: 0.3s ease;
+        background-color: #C96A45;
     }
 
-    .problem-card:hover::before {
-        opacity: 1;
+    .problem-card:nth-of-type(2)::before {
+        background-color: #D99A32;
     }
 
-    .problem-card:hover {
-        transform: translateY(-4px);
-
-        border-color: rgba(99, 102, 241, 0.28);
-
-        box-shadow:
-            0 18px 40px rgba(45, 45, 90, 0.09);
+    .problem-card:nth-of-type(3)::before {
+        background-color: #9E3F32;
     }
 
+    .problem-card:nth-of-type(4)::before {
+        background-color: #C96A45;
+    }
 
     .problem-card h3 {
         font-size: 18px;
 
-        color: #25253d;
+        color: #30251F;
 
         margin-bottom: 10px;
     }
 
     .problem-card p {
-        color: #737388;
+        color: #765F53;
 
         line-height: 1.65;
 
@@ -981,7 +494,7 @@ footer {
 
     /* =========================================
        TAGS
-       ========================================= */
+    ========================================= */
 
     .problem-tags {
         display: flex;
@@ -996,40 +509,31 @@ footer {
     .tag {
         padding: 6px 11px;
 
-        border-radius: 20px;
+        border-radius: 5px;
 
         font-size: 11px;
 
         font-weight: 600;
 
-        color: #5b5b79;
+        color: #7A352A;
 
-        background:
-            linear-gradient(
-                135deg,
-                #f1f2ff,
-                #f9efff
-            );
+        background-color: #F4DED2;
 
-        border: 1px solid #e4e2ff;
+        border: 1px solid #E5B9A7;
     }
 
-    .problem-card:nth-child(3) .tag {
-        background: #ecfdf5;
-        border-color: #c9f4df;
-        color: #21845b;
-    }
+    .problem-card:nth-of-type(2) .tag {
+        color: #7A5718;
 
-    .problem-card:nth-child(4) .tag {
-        background: #fff7ed;
-        border-color: #fed7aa;
-        color: #b45309;
+        background-color: #F5E8C8;
+
+        border-color: #E4C982;
     }
 
 
     /* =========================================
        PROBLEM FOOTER
-       ========================================= */
+    ========================================= */
 
     .problem-footer {
         display: flex;
@@ -1038,13 +542,13 @@ footer {
 
         align-items: center;
 
-        border-top: 1px solid #eeeeF5;
+        border-top: 1px solid #E8D2B8;
 
         padding-top: 14px;
     }
 
     .contributions {
-        color: #8a8a9e;
+        color: #8A7063;
 
         font-size: 12px;
 
@@ -1057,43 +561,25 @@ footer {
     .view-button {
         padding: 8px 15px;
 
-        border: 1px solid #dcdcec;
+        border: 1px solid #9E3F32;
 
-        border-radius: 8px;
+        border-radius: 6px;
 
-        background: white;
+        background-color: transparent;
 
-        color: #55556d;
+        color: #9E3F32;
 
         font-size: 12px;
 
         font-weight: 600;
 
         cursor: pointer;
-
-        transition: 0.25s ease;
-    }
-
-    .view-button:hover {
-        background:
-            linear-gradient(
-                135deg,
-                #6366f1,
-                #8b5cf6
-            );
-
-        border-color: transparent;
-
-        color: white;
-
-        box-shadow:
-            0 7px 18px rgba(99, 102, 241, 0.2);
     }
 
 
     /* =========================================
        CONTACT SECTION
-       ========================================= */
+    ========================================= */
 
     .contact-section {
         position: relative;
@@ -1102,45 +588,32 @@ footer {
 
         margin-top: 90px;
 
-        padding: 70px 25px;
+        padding: 65px 25px;
 
-        color: white;
+        color: #FFFDF8;
 
-        background:
-            radial-gradient(
-                circle at 10% 20%,
-                rgba(99, 102, 241, 0.35),
-                transparent 30%
-            ),
-            radial-gradient(
-                circle at 90% 80%,
-                rgba(236, 72, 153, 0.25),
-                transparent 30%
-            ),
-            linear-gradient(
-                135deg,
-                #17172c,
-                #24244a
-            );
+        background-color: #9E3F32;
+
+        border-top: 6px solid #D99A32;
     }
 
 
-    /* ABSTRACT SHAPES */
+    /* SIMPLE ABSTRACT CIRCLES */
 
     .contact-section::before {
         content: "";
 
         position: absolute;
 
-        width: 350px;
-        height: 350px;
+        width: 280px;
+        height: 280px;
 
-        border: 1px solid rgba(255, 255, 255, 0.08);
+        border: 2px solid rgba(255, 255, 255, 0.12);
 
         border-radius: 50%;
 
-        right: -100px;
-        top: -180px;
+        right: -120px;
+        top: -160px;
     }
 
     .contact-section::after {
@@ -1148,20 +621,22 @@ footer {
 
         position: absolute;
 
-        width: 250px;
-        height: 250px;
+        width: 180px;
+        height: 180px;
 
-        border: 1px solid rgba(255, 255, 255, 0.06);
+        border: 2px solid rgba(255, 255, 255, 0.10);
 
-        transform: rotate(35deg);
+        border-radius: 35px;
 
-        left: -100px;
-        bottom: -120px;
+        left: -80px;
+        bottom: -100px;
+
+        transform: rotate(25deg);
     }
-
 
     .contact-container {
         position: relative;
+
         z-index: 2;
 
         max-width: 1150px;
@@ -1175,34 +650,24 @@ footer {
         gap: 60px;
     }
 
-
     .contact-section h2 {
         font-size: 25px;
 
+        color: #FFFDF8;
+
         margin-bottom: 16px;
-
-        background:
-            linear-gradient(
-                90deg,
-                #ffffff,
-                #c4b5fd,
-                #f9a8d4
-            );
-
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
     }
 
     .contact-section h3 {
         font-size: 14px;
 
-        margin-bottom: 18px;
+        color: #F6EBDD;
 
-        color: white;
+        margin-bottom: 18px;
     }
 
     .contact-section p {
-        color: #aaaac2;
+        color: #F1D9CC;
 
         line-height: 1.7;
 
@@ -1221,42 +686,32 @@ footer {
     .contact-links li {
         margin-bottom: 12px;
 
-        color: #aaaac2;
+        color: #F1D9CC;
 
         font-size: 13px;
-
-        transition: 0.2s ease;
-    }
-
-    .contact-links li:hover {
-        color: white;
-
-        transform: translateX(4px);
     }
 
 
     /* =========================================
        FOOTER
-       ========================================= */
+    ========================================= */
 
     footer {
-        background: #10101f;
+        background-color: #30251F;
 
-        color: #77778f;
+        color: #CDB8AA;
 
         text-align: center;
 
         padding: 20px;
 
         font-size: 11px;
-
-        border-top: 1px solid rgba(255, 255, 255, 0.05);
     }
 
 
     /* =========================================
        RESPONSIVE DESIGN
-       ========================================= */
+    ========================================= */
 
     @media (max-width: 900px) {
 
@@ -1278,8 +733,9 @@ footer {
 
         .contact-container {
             grid-template-columns: 1fr 1fr;
-        }
 
+            gap: 35px;
+        }
     }
 
 
@@ -1310,7 +766,13 @@ footer {
 
             gap: 5px;
 
-            padding: 7px;
+            padding: 6px;
+
+            border-radius: 10px;
+        }
+
+        .search-container input {
+            padding: 14px;
         }
 
         .search-button {
@@ -1346,12 +808,11 @@ footer {
         .contact-section {
             padding: 55px 25px;
         }
-
     }
 
+</style>
 
 
-    </style>
 </head>
 <body>
 
