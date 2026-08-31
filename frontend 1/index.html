@@ -831,7 +831,24 @@
             <button class="login-button">Login</button>
         </nav>
     </header>
+</header>
 
+    <!-- ⬇️ YOU WILL PASTE IT RIGHT HERE ⬇️ -->
+    <section style="text-align: center; padding: 40px; background-color: #FFFDF8; border-bottom: 2px solid #E8D2B8;">
+        <h2 style="color: #9E3F32; margin-bottom: 15px;">Create an Account</h2>
+        <form id="signupForm" style="display: flex; flex-direction: column; max-width: 400px; margin: 0 auto; gap: 10px;">
+            <input type="text" id="username" placeholder="Username" required style="padding: 10px; border: 1px solid #C96A45; border-radius: 5px;" />
+            <input type="email" id="email" placeholder="Email" required style="padding: 10px; border: 1px solid #C96A45; border-radius: 5px;" />
+            <input type="password" id="password" placeholder="Password" required style="padding: 10px; border: 1px solid #C96A45; border-radius: 5px;" />
+            <input type="text" id="displayName" placeholder="Display Name" required style="padding: 10px; border: 1px solid #C96A45; border-radius: 5px;" />
+            <button type="submit" style="padding: 10px; background-color: #9E3F32; color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;">Sign Up</button>
+        </form>
+        <div id="statusMessage" style="margin-top: 15px; font-weight: bold;"></div>
+    </section>
+    
+    <!-- =========================
+         SEARCH AREA
+    ========================== -->
     <!-- =========================
          SEARCH AREA
     ========================== -->
@@ -934,6 +951,59 @@
     <footer>
         <p>&copy; 2026 Jan-Samadhan || VIT-AP .</p>
     </footer>
+<!-- =========================
+         FOOTER
+    ========================== -->
+    <footer>
+        <p>&copy; 2026 Jan-Samadhan || VIT-AP .</p>
+    </footer>
+
+    <!-- ⬇️ PASTE THE SCRIPT RIGHT HERE ⬇️ -->
+    <script>
+      document.getElementById('signupForm').addEventListener('submit', async function(event) {
+        event.preventDefault(); // Prevents the page from reloading
+
+        // 1. Grab the values from the form
+        const userData = {
+          username: document.getElementById('username').value,
+          email: document.getElementById('email').value,
+          password: document.getElementById('password').value,
+          display_name: document.getElementById('displayName').value
+        };
+
+        try {
+          // 2. Send the data to your Node backend!
+          const response = await fetch('http://localhost:3000/api/signup', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(userData) // Convert the data to JSON
+          });
+
+          const data = await response.json();
+
+          // 3. Check if it was successful
+          if (response.ok) {
+            document.getElementById('statusMessage').innerText = "Signup Successful! Check your database.";
+            document.getElementById('statusMessage').style.color = "green";
+            
+            // Save the token so the user stays logged in
+            localStorage.setItem('token', data.token);
+          } else {
+            // If there's an error (like duplicate username)
+            document.getElementById('statusMessage').innerText = "Error: " + data.error;
+            document.getElementById('statusMessage').style.color = "red";
+          }
+        } catch (error) {
+          console.error("Connection error:", error);
+          document.getElementById('statusMessage').innerText = "Failed to connect to the server. Is it running?";
+          document.getElementById('statusMessage').style.color = "red";
+        }
+      });
+    </script>
+    <!-- ⬆️ END OF SCRIPT ⬆️ -->
+
 
 </body>
 </html>
